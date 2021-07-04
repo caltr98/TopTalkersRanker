@@ -5,7 +5,9 @@ Gestione Di Reti 20/21 Progetto Finale Turco-Ziccolella
 
 ### Dipendenze Python:
 * scapy
-* nfstream
+* [nfstream](https://www.nfstream.org/docs/#installation-guide)
+* [rrd-tool](https://oss.oetiker.ch/rrdtool/download.en.html)
+
 
 ### Requisiti per l'esecuzione:
 
@@ -54,3 +56,9 @@ ctrl + Z
   * prot7
   
   ![image](https://user-images.githubusercontent.com/49340033/124387379-abe9aa80-dcde-11eb-87a8-1b4d5ce86c03.png)
+
+## Come Avviene la Classificazione
+  I top talkers vengono classificati sulla somma del bytes in ingresso / uscita / entrambi nel periodo di aggiornamento della classifica scelto
+  (Ranking Refresh Time)*RRD_Step secondi.
+  
+  I grafici dei bytes in ingresso e uscita si riferiscono invece all'ultima cattura effettuata ed analizzata con nfstream.
