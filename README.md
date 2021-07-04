@@ -35,15 +35,15 @@ ctrl + Z
   3. Creazione Api Key di Grafana ![image](https://user-images.githubusercontent.com/49340033/124387161-b6f00b00-dcdd-11eb-969a-83f36b66d624.png)
 
   4. sudo python3 appy.py
-  5. Creazione nuova config 
-    1. Scelta interfaccia cattura
-    2. inserimento Api Grafana [Bearer --------] 
-    3. Scelta modalità di aggregazione ip/prot7
-    4. Scelta RRD step sec
-    5. Scelta secondi entro il quale talker deve fare traffico per non essere eliminato
-    6. Scelta nel numero di cicli (RDD step sec * Numero di cicli) in cui aggiornare la classifica nella dashboard
-    7. Scelta numero di talkers da esporrè nei grafici in classifica
-    8. Scelta se avviare da programma grafana-rrd-server
+  5. Creazione nuova config
+      1. Scelta interfaccia cattura
+      2. inserimento Api Grafana [Bearer --------] 
+      3. Scelta modalità di aggregazione ip/prot7
+      4. Scelta RRD step sec
+      5. Scelta secondi entro il quale talker deve fare traffico per non essere eliminato
+      6. Scelta nel numero di cicli (RDD step sec * Numero di cicli) in cui aggiornare la classifica nella dashboard
+      7. Scelta numero di talkers da esporrè nei grafici in classifica
+      8. Scelta se avviare da programma grafana-rrd-server
   7. Avvio di grafana-rrd-server
   
   ## Esecuzione:
