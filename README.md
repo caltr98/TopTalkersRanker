@@ -1,7 +1,7 @@
 # TopTalkersRanker
 Gestione Di Reti 20/21 Progetto Finale Turco-Ziccolella
 
-*Classifica dei primi X top talkers per Ip o classifica dei Protocolli di livello 7 più utilizzati *
+* Classifica dei primi X top talkers per Ip o classifica dei Protocolli di livello 7 più utilizzati 
 
 ### Dipendenze Python:
 * scapy
@@ -48,9 +48,9 @@ ctrl + Z
   
   ## Esecuzione:
   Modalità di aggregazione
-  *ip
+  * ip
   ![image](https://user-images.githubusercontent.com/49340033/124388049-39c69500-dce1-11eb-946b-2b78f253877f.png)
 
-  *prot7
+  * prot7
   
   ![image](https://user-images.githubusercontent.com/49340033/124387379-abe9aa80-dcde-11eb-87a8-1b4d5ce86c03.png)
