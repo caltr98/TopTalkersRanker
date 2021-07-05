@@ -13,7 +13,7 @@ from nfstream.streamer import NFStreamer
 import operator
 from concurrent.futures.thread import ThreadPoolExecutor
 import configparser
-from scapy.sendrecv import  sniff
+from scapy.sendrecv import sniff
 from scapy.utils import PcapWriter
 
 # Remove warnings for scrapy
@@ -405,11 +405,12 @@ if __name__ == '__main__':
                 done = True
             except:
                 print("grafana-rrd-server is not in the default directory")
-                if not done:
-                    try:
-                        os.system("sudo ./grafana-rrd-server -r ./rrd -s " + rrd_step + " &")
-                    except:
-                        print("grafana-rrd-server is not in the current program directory")
+            if not done:
+                try:
+                    os.system("sudo ./grafana-rrd-server -r ./rrd -s " + rrd_step + " &")
+                except:
+                    print("grafana-rrd-server is not in the current program directory")
+                break
             break
 
         elif answer == "n":
