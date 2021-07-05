@@ -51,7 +51,7 @@ ctrl + Z
   ## Esecuzione:
   Modalità di aggregazione
   * ip
-  ![image](https://user-images.githubusercontent.com/49340033/124500993-09eebe80-ddc1-11eb-9fa6-3502a3452660.png)
+  ![image](https://user-images.githubusercontent.com/49340033/124501217-6eaa1900-ddc1-11eb-8bcd-9245291047de.png)
 
   * prot7
   ![image](https://user-images.githubusercontent.com/49340033/124499407-3ce38300-ddbe-11eb-92a1-602c2f9eb23b.png)
