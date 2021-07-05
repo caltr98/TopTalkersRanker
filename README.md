@@ -54,8 +54,7 @@ ctrl + Z
   ![image](https://user-images.githubusercontent.com/49340033/124388049-39c69500-dce1-11eb-946b-2b78f253877f.png)
 
   * prot7
-  
-  ![image](https://user-images.githubusercontent.com/49340033/124387379-abe9aa80-dcde-11eb-87a8-1b4d5ce86c03.png)
+  ![image](https://user-images.githubusercontent.com/49340033/124499407-3ce38300-ddbe-11eb-92a1-602c2f9eb23b.png)
 
 ## Come Avviene la Classificazione
   I top talkers vengono classificati sulla somma del bytes in ingresso / uscita / entrambi nel periodo di aggiornamento della classifica scelto
