@@ -23,8 +23,6 @@ class Talker:
         self.out_bytes_current = int(out_bytes)
         self.inandout_bytes_current = int(in_bytes + out_bytes)
 
-        self.lastupdate = None
-
         # extra info
         self.application_category_name = application_category_name
         self.guessType = guessType
@@ -40,9 +38,9 @@ class Talker:
         self.out_bytes += local_bytes
         self.inandout_bytes += local_bytes + talker_bytes
 
-        self.in_bytes_current = talker_bytes
-        self.out_bytes_current = local_bytes
-        self.inandout_bytes_current = local_bytes + talker_bytes
+        self.in_bytes_current += talker_bytes
+        self.out_bytes_current += local_bytes
+        self.inandout_bytes_current += local_bytes + talker_bytes
 
         # Update lastUpdate
         self.lastupdate = ts
@@ -59,7 +57,7 @@ class Talker:
 
     # ---------------------------------------------RRD_OPS-------------------------------------------#
 
-    def RRDcreate(self, step, hb, min, max, time):
+    def RRDcreate(self, step, hb, min, max, ts, time):
 
         if self.filter == "ip":
             rrdtool.create("./rrd/RRD_" + self.ip + ".rrd", '--start', time,
@@ -74,6 +72,8 @@ class Talker:
                            'DS:InOut:GAUGE:{}:{}:{}'.format(hb, min, max),
                            'DS:In:GAUGE:{}:{}:{}'.format(hb, min, max),
                            'DS:Out:GAUGE:{}:{}:{}'.format(hb, min, max))
+        
+        self.lastupdate=ts
 
     def RRDupdate(self, timestamp):
 

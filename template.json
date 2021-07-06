@@ -63,13 +63,13 @@
           {
             "data": "",
             "refId": "A",
-            "target": "Statistics:N_Flow",
+            "target": "Statistics:N_Talkers",
             "type": "timeseries"
           }
         ],
         "timeFrom": null,
         "timeShift": null,
-        "title": "Flow Number (Period Mean)",
+        "title": "Talkers Number (Period Mean)",
         "type": "gauge"
       },
       {
