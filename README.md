@@ -4,12 +4,12 @@ Gestione Di Reti 20/21 Progetto Finale Turco-Ziccolella
 * Classifica dei primi X top talkers per Ip o classifica dei Protocolli di livello 7 più utilizzati 
 
 ### Dipendenze Python:
-* scapy
 * [nfstream](https://www.nfstream.org/docs/#installation-guide)
 * [rrd-tool](https://oss.oetiker.ch/rrdtool/download.en.html)
 
 
 ### Requisiti per l'esecuzione:
+* tcpdump
 
 * [rrd-tool](https://oss.oetiker.ch/rrdtool/download.en.html)
 
@@ -51,13 +51,17 @@ ctrl + Z
   ## Esecuzione:
   Modalità di aggregazione
   * ip
-  ![image](https://user-images.githubusercontent.com/49340033/124501217-6eaa1900-ddc1-11eb-8bcd-9245291047de.png)
-
+  ![image](https://user-images.githubusercontent.com/49340033/124630156-7087e100-de82-11eb-9152-4ce0f2a689d4.png)
   * prot7
   ![image](https://user-images.githubusercontent.com/49340033/124499407-3ce38300-ddbe-11eb-92a1-602c2f9eb23b.png)
 
+## Come Avviene la Cattura
+  La cattura avviene in un thread producer che esegue il comando tcpdump con timer di RRD_Step secondi, il produttore passa al consumatore il timestamp di fine  cattura e il nome del file da aprire, se il consumatore perde una cattura essa viene sovrascritta dal produttore, quindi è persa per sempre
+  
+## Come avviene l'aggiornamento degli RRD?
+  L'aggiornamento si basa sul timestamp ottenuto a fine cattura del .pcap da parte del produttore, quindi ogni rrd dei talkers + l'rrd delle statistiche verranno aggiornati sullo stesso timestamp,un punto viene considerato Unkown se non viene effettuato un update per un periodo 3*RRD_step
+  
 ## Come Avviene la Classificazione
   I top talkers vengono classificati sulla somma del bytes in ingresso / uscita / entrambi nel periodo di aggiornamento della classifica scelto
   (Ranking Refresh Time)*RRD_Step secondi.
-  
-  I grafici dei bytes in ingresso e uscita si riferiscono invece all'ultima cattura effettuata ed analizzata con nfstream.
+  I grafici dei bytes si riferiscono alla somma dei bytes del periodo di classificazione
